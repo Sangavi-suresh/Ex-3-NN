@@ -36,7 +36,7 @@ Step 3: Repeat the  iteration  until the losses become constant and  minimum<BR>
 Step 4 : Test for the XOR patterns.
 
 <H3>Program:</H3>
-```
+```python
 
 import numpy as np
 import pandas as pd
@@ -45,7 +45,7 @@ import matplotlib.pyplot as plt
 
 ```
 
-```
+```python
 
 x=np.array([[0,0,1,1],[0,1,0,1]])
 y=np.array([[0,1,1,0]])
@@ -61,13 +61,16 @@ losses = []
 
 ```
 
-```
+```python
 
 def sigmoid(z):
     z= 1/(1+np.exp(-z))
     return z
+
 ```
-```
+
+```python
+
 def forward_prop(w1,w2,x):
     z1 = np.dot(w1,x)
     a1 = sigmoid(z1)
@@ -77,7 +80,7 @@ def forward_prop(w1,w2,x):
     
 ```
 
-```
+```python
 
 def back_prop(m,w1,w2,z1,a1,z2,a2,y):
   dz2 = a2-y
@@ -90,7 +93,7 @@ def back_prop(m,w1,w2,z1,a1,z2,a2,y):
   
 ```
 
-```
+```python
 
 iterations = 10000
 for i in range(iterations):
@@ -107,7 +110,7 @@ plt.ylabel("Loss value")
 
 ```
 
-```
+```python
 
 def predict(w1,w2,input):
     z1,a1,z2,a2 = forward_prop(w1,w2,test)
@@ -119,7 +122,7 @@ def predict(w1,w2,input):
 	
 ```
 
-```
+```python
 
 print('Input',' Output')
 test=np.array([[1],[0]])
